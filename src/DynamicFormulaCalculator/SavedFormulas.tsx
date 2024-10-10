@@ -5,8 +5,6 @@ import { FC } from "react";
 import {
   Box,
   ButtonBase,
-  Dialog,
-  DialogTitle,
   IconButton,
   List,
   ListItem,
@@ -47,7 +45,13 @@ const SavedFormulas: FC<SavedFormulasProps> = (props) => {
   };
 
   return (
-    <Box>
+    <Box
+      sx={{
+        overflowY: "scroll",
+        height: 450,
+        width: "30%",
+      }}
+    >
       <List
         sx={{
           p: 2,
@@ -63,10 +67,16 @@ const SavedFormulas: FC<SavedFormulasProps> = (props) => {
         >
           Saved Formulas
         </Typography>
-        {props.savedFormulas.length === 0 && (
-          <Typography>No Formulas Saved Yet</Typography>
+        {props.savedFormulas?.length === 0 && (
+          <Typography
+            sx={{
+              mt: 2,
+            }}
+          >
+            No Formulas Saved Yet
+          </Typography>
         )}
-        {props.savedFormulas.map((formula: string, index: number) => (
+        {props.savedFormulas?.map((formula: string, index: number) => (
           <ListItem disableGutters key={formula}>
             <ButtonBase
               onClick={() => selectFormula(formula)}
@@ -88,8 +98,45 @@ const SavedFormulas: FC<SavedFormulasProps> = (props) => {
           </ListItem>
         ))}
       </List>
+      <List
+        sx={{
+          p: 2,
+          pt: 0,
+        }}
+      >
+        <Typography
+          fontSize={18}
+          fontWeight={500}
+          style={{
+            color: "#243642",
+          }}
+        >
+          Suggestions
+        </Typography>
+
+        {suggestions?.map((formula: string, index: number) => (
+          <ListItem disableGutters key={formula}>
+            <ButtonBase
+              onClick={() => selectFormula(formula)}
+              sx={{
+                p: 1,
+                py: 0,
+              }}
+            >
+              <BlockMath math={formula} />
+            </ButtonBase>
+          </ListItem>
+        ))}
+      </List>
     </Box>
   );
 };
 
 export default SavedFormulas;
+
+const suggestions: any = [
+  "log(sqrt(a) + abs(b))",
+  "x^3 + 3 * x^2 + 4 * x + 8",
+  "a / ((b * c) + (d - f))",
+  "(tan(sin(a)) + tan(cos(b)) + sin(cos(c)))^2",
+];

@@ -36,6 +36,7 @@ const VariableInput: FC<VariableInputProps> = (props) => {
         sx={{
           mt: 1,
           backgroundColor: "#629584",
+          width: 190,
         }}
         type="number"
         size="small"
@@ -48,6 +49,7 @@ const VariableInput: FC<VariableInputProps> = (props) => {
       <Slider
         value={props.variableValue}
         sx={{
+          width: 190,
           "& .MuiSlider-thumb": {
             color: "#629584",
           },
