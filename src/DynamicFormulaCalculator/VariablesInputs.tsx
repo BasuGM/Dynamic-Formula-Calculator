@@ -2,7 +2,7 @@
 import { FC } from "react";
 
 // MUI Imports
-import { Box } from "@mui/material";
+import { Box, Grid2 } from "@mui/material";
 
 // Functional Imports
 
@@ -20,6 +20,9 @@ const VariablesInputs: FC<VariablesInputsProps> = (props) => {
       sx={{
         width: "20%",
         height: 400,
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
         overflowY: "scroll",
         px: 3,
       }}

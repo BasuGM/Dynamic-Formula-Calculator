@@ -2,7 +2,7 @@
 import { FC, useEffect, useState } from "react";
 
 // MUI Imports
-import { Box, Typography } from "@mui/material";
+import { Box, Grid2, Typography } from "@mui/material";
 
 // Functional Imports
 import { useDispatch, useSelector } from "react-redux";
@@ -118,6 +118,7 @@ const DynamicFormulaCalculator: FC<DynamicFormulaCalculatorProps> = (props) => {
         backgroundColor: "#E2F1E7",
         height: "100vh",
         width: "100vw",
+        minWidth: 1000,
       }}
     >
       <Box
@@ -143,7 +144,7 @@ const DynamicFormulaCalculator: FC<DynamicFormulaCalculatorProps> = (props) => {
         sx={{
           justifyContent: "center",
           display: "flex",
-          gap: 10,
+          gap: 4,
         }}
       >
         <FormulaInputResult

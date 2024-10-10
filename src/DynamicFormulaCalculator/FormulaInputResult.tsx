@@ -2,7 +2,14 @@
 import { FC } from "react";
 
 // MUI Imports
-import { Box, Button, TextField, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Grid2,
+  Input,
+  TextField,
+  Typography,
+} from "@mui/material";
 
 // Functional Imports
 import { BlockMath } from "react-katex";
@@ -35,6 +42,7 @@ const FormulaInputResult: FC<FormulaInputResultProps> = (props) => {
       >
         Enter Formula:{" "}
       </Typography>
+
       <TextField
         sx={{
           width: "100%",
@@ -88,7 +96,7 @@ const FormulaInputResult: FC<FormulaInputResultProps> = (props) => {
             </Typography>
 
             <Typography
-              fontSize={32}
+              fontSize={30}
               fontWeight={700}
               style={{
                 color: "#243642",

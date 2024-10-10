@@ -5,6 +5,7 @@ import { FC } from "react";
 import {
   Box,
   ButtonBase,
+  Grid2,
   IconButton,
   List,
   ListItem,
@@ -49,7 +50,7 @@ const SavedFormulas: FC<SavedFormulasProps> = (props) => {
       sx={{
         overflowY: "scroll",
         height: 450,
-        width: "30%",
+        width: "25%",
       }}
     >
       <List
@@ -138,5 +139,5 @@ const suggestions: any = [
   "log(sqrt(a) + abs(b))",
   "x^3 + 3 * x^2 + 4 * x + 8",
   "a / ((b * c) + (d - f))",
-  "(tan(sin(a)) + tan(cos(b)) + sin(cos(c)))^2",
+  "sin(a) + cos(b) + tan(c)",
 ];
